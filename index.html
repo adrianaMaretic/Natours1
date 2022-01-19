@@ -28,22 +28,30 @@
 
       <nav class="navigation__nav">
         <ul class="navigation__list">
-          <li class="navigation__item">
-            <a href="#" class="navigation__link"><span>01</span>About Natous</a>
+          <li class="navigation__item nav-btn">
+            <a href="#section-about" class="navigation__link"
+              ><span>01</span>About Natours</a
+            >
           </li>
-          <li class="navigation__item">
-            <a href="#" class="navigation__link"><span>02</span>Your benfits</a>
+          <li class="navigation__item nav-btn">
+            <a href="#section-features" class="navigation__link"
+              ><span>02</span>Your benefits</a
+            >
           </li>
-          <li class="navigation__item">
-            <a href="#" class="navigation__link"
+          <li class="navigation__item nav-btn">
+            <a href="#section-tours" class="navigation__link"
               ><span>03</span>Popular tours</a
             >
           </li>
-          <li class="navigation__item">
-            <a href="#" class="navigation__link"><span>04</span>Stories</a>
+          <li class="navigation__item nav-btn">
+            <a href="#section-stories" class="navigation__link"
+              ><span>04</span>Stories</a
+            >
           </li>
-          <li class="navigation__item">
-            <a href="#" class="navigation__link"><span>05</span>Book now</a>
+          <li class="navigation__item nav-btn">
+            <a href="#section-book" class="navigation__link"
+              ><span>05</span>Book now</a
+            >
           </li>
         </ul>
       </nav>
@@ -67,7 +75,7 @@
     </header>
 
     <main>
-      <section class="section-about">
+      <section class="section-about" id="section-about">
         <div class="u-center-text u-margin-bottom-big">
           <h2 class="heading-secondary">
             Exciting tours for adventurous people
@@ -125,11 +133,13 @@
         </div>
       </section>
 
-      <section class="section-features">
+      <section class="section-features" id="section-features">
         <div class="row">
           <div class="col-1-of-4">
             <div class="feature-box">
-              <i class="feature-box__icon icon-basic-world"></i>
+              <svg class="feature-box__svg">
+                <use xlink:href="img/sprite.svg#icon-map"></use>
+              </svg>
               <h3 class="heading-tertiary u-margin-bottom-small">
                 Explore the world
               </h3>
@@ -142,7 +152,9 @@
 
           <div class="col-1-of-4">
             <div class="feature-box">
-              <i class="feature-box__icon icon-basic-compass"></i>
+              <svg class="feature-box__svg">
+                <use xlink:href="img/sprite.svg#icon-location-park"></use>
+              </svg>
               <h3 class="heading-tertiary u-margin-bottom-small">
                 Meet nature
               </h3>
@@ -155,7 +167,9 @@
 
           <div class="col-1-of-4">
             <div class="feature-box">
-              <i class="feature-box__icon icon-basic-map"></i>
+              <svg class="feature-box__svg">
+                <use xlink:href="img/sprite.svg#icon-mood-happy-solid"></use>
+              </svg>
               <h3 class="heading-tertiary u-margin-bottom-small">
                 Find your way
               </h3>
@@ -168,7 +182,9 @@
 
           <div class="col-1-of-4">
             <div class="feature-box">
-              <i class="feature-box__icon icon-basic-heart"></i>
+              <svg class="feature-box__svg">
+                <use xlink:href="img/sprite.svg#icon-heart"></use>
+              </svg>
               <h3 class="heading-tertiary u-margin-bottom-small">
                 Live a healthier life
               </h3>
@@ -286,7 +302,7 @@
         </div>
       </section>
 
-      <section class="section-stories">
+      <section class="section-stories" id="section-stories">
         <div class="bg-video">
           <video class="bg-video__content" autoplay muted loop>
             <source src="img/video.mp4" type="video/mp4" />
@@ -354,7 +370,7 @@
         </div>
       </section>
 
-      <section class="section-book">
+      <section class="section-book" id="section-book">
         <div class="row">
           <div class="book">
             <div class="book__form">
@@ -464,9 +480,10 @@
         </div>
         <div class="col-1-of-2">
           <p class="footer__copyright">
-            &copy; Built by Adriana Maretić through the Udemy course by Jonas
-            Schmedtmann (Advanced CSS and Sass: Flexbox, Grid, Animations and
-            More!)
+            &copy; Built by
+            <span class="footer__name">Adriana Maretić</span> through the Udemy
+            course by Jonas Schmedtmann (Advanced CSS and Sass: Flexbox, Grid,
+            Animations and More!)
           </p>
         </div>
       </div>
@@ -474,11 +491,19 @@
 
     <div class="popup" id="popup">
       <div class="popup__content">
-        <div class="popup__left">
-          <img src="img/nat-8.jpg" alt="Tour photo" class="popup__img" />
-          <img src="img/nat-9.jpg" alt="Tour photo" class="popup__img" />
+        <div class="popup__pics">
+          <img
+            src="img/nat-8.jpg"
+            alt="Tour photo"
+            class="popup__img popup__img--1"
+          />
+          <img
+            src="img/nat-9.jpg"
+            alt="Tour photo"
+            class="popup__img popup__img--2"
+          />
         </div>
-        <div class="popup__right">
+        <div class="popup__texts">
           <a href="#section-tours" class="popup__close">&times;</a>
           <h2 class="heading-secondary u-margin-bottom-small">
             Start booking now
@@ -492,15 +517,8 @@
             risus pretium quam. Aliquam sem et tortor consequat id. Volutpat
             odio facilisis mauris sit amet massa vitae. Mi bibendum neque
             egestas congue. Placerat orci nulla pellentesque dignissim enim sit.
-            Vitae semper quis lectus nulla at volutpat diam ut venenatis.
-            Malesuada pellentesque elit eget gravida cum sociis natoque
-            penatibus et. Proin fermentum leo vel orci porta non pulvinar neque
-            laoreet. Gravida neque convallis a cras semper. Molestie at
-            elementum eu facilisis sed odio morbi quis. Faucibus vitae aliquet
-            nec ullamcorper sit amet risus nullam eget. Nam libero justo laoreet
-            sit. Amet massa vitae tortor condimentum lacinia quis vel eros
-            donec. Sit amet facilisis magna etiam. Imperdiet sed euismod nisi
-            porta.
+            Eligendi perspiciatis dolorum maiores nemo corrupti necessitatibus.
+            Temporibus nobis odio exercitationem adipisci.
           </p>
           <a href="#" class="btn btn--green">Book now</a>
         </div>
