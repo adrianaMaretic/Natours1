@@ -883,7 +883,9 @@ body {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   width: 75%;
-  max-height: 80%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   background-color: #fff;
   -webkit-box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
           box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
@@ -908,9 +910,20 @@ body {
   .popup__content {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-    -ms-grid-rows: 1fr 2fr;
-        grid-template-rows: 1fr 2fr;
-    grid-row-gap: 2rem;
+    -ms-grid-rows: 1fr min-content;
+        grid-template-rows: 1fr -webkit-min-content;
+        grid-template-rows: 1fr min-content;
+    grid-row-gap: 0;
+  }
+}
+
+@media only screen and (max-width: 56.25em) {
+  .popup__content {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.8))), url(../../img/nat-8.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(../../img/nat-8.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 }
 
@@ -931,12 +944,30 @@ body {
     grid-row: 1/2;
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
   }
 }
 
 .popup__texts {
   grid-column: 2/-1;
   padding: 0 2rem;
+}
+
+@media only screen and (max-width: 75em) {
+  .popup__texts {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    grid-row: 2/-1;
+    padding: 0 5rem 2rem;
+  }
+}
+
+@media only screen and (max-width: 56.25em) {
+  .popup__texts {
+    padding: 3rem 3rem 2rem;
+  }
 }
 
 .popup__img {
@@ -948,14 +979,40 @@ body {
   overflow: hidden;
 }
 
+@media only screen and (max-width: 56.25em) {
+  .popup__img {
+    display: none;
+  }
+}
+
 .popup__img--1 {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1/2;
 }
 
+@media only screen and (max-width: 75em) {
+  .popup__img--1 {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+  }
+}
+
 .popup__img--2 {
   grid-row: 2/-1;
+}
+
+@media only screen and (max-width: 75em) {
+  .popup__img--2 {
+    grid-column: 2/-1;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+  }
 }
 
 .popup__text {

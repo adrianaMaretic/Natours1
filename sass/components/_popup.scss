@@ -21,7 +21,8 @@
     @include absCenter;
 
     width: 75%;
-    max-height: 80%;
+    height: max-content;
+
     background-color: $color-white;
     box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
     border-radius: 3px;
@@ -38,8 +39,17 @@
 
     @media only screen and (max-width: 75em) {
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr 2fr;
-      grid-row-gap: 2rem;
+      grid-template-rows: 1fr min-content;
+      grid-row-gap: 0;
+    }
+
+    @media only screen and (max-width: 56.25em) {
+      background-image: linear-gradient(rgba(#fff, 0.8), rgba(#fff, 0.8)),
+        url(../../img/nat-8.jpg);
+
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
   }
 
@@ -49,15 +59,26 @@
     display: grid;
     grid-template-rows: 1fr 1fr;
 
-    @media only screen and (max-width: 75em)
+    @media only screen and (max-width: 75em) {
       grid-row: 1/2;
       grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
     }
   }
 
   &__texts {
     grid-column: 2/-1;
     padding: 0 2rem;
+
+    @media only screen and (max-width: 75em) {
+      grid-column: 1/2;
+      grid-row: 2/-1;
+      padding: 0 5rem 2rem;
+    }
+
+    @media only screen and (max-width: 56.25em) {
+      padding: 3rem 3rem 2rem;
+    }
   }
 
   &__img {
@@ -66,11 +87,26 @@
     display: block;
     object-fit: cover;
     overflow: hidden;
+
+    @media only screen and (max-width: 56.25em) {
+      display: none;
+    }
+
     &--1 {
       grid-row: 1/2;
+
+      @media only screen and (max-width: 75em) {
+        grid-column: 1/2;
+        grid-row: 1/2;
+      }
     }
     &--2 {
       grid-row: 2/-1;
+
+      @media only screen and (max-width: 75em) {
+        grid-column: 2/-1;
+        grid-row: 1/2;
+      }
     }
   }
 
