@@ -19,6 +19,11 @@
 
   &__content {
     @include absCenter;
+    background-image: linear-gradient(rgba(#fff, 0.8), rgba(#fff, 0.8)),
+      url(../../img/nat-8.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 
     width: 75%;
     height: max-content;
@@ -26,88 +31,12 @@
     background-color: $color-white;
     box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
     border-radius: 3px;
-
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-column-gap: 2rem;
-    align-items: center;
+    padding: 5rem 3rem;
 
     overflow: hidden;
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.25);
     transition: all 0.5s 0.2s;
-
-    @media only screen and (max-width: 75em) {
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr min-content;
-      grid-row-gap: 0;
-    }
-
-    @media only screen and (max-width: 56.25em) {
-      background-image: linear-gradient(rgba(#fff, 0.8), rgba(#fff, 0.8)),
-        url(../../img/nat-8.jpg);
-
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-  }
-
-  &__pics {
-    grid-column: 1/2;
-
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-
-    @media only screen and (max-width: 75em) {
-      grid-row: 1/2;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr;
-    }
-  }
-
-  &__texts {
-    grid-column: 2/-1;
-    padding: 0 2rem;
-
-    @media only screen and (max-width: 75em) {
-      grid-column: 1/2;
-      grid-row: 2/-1;
-      padding: 0 5rem 2rem;
-    }
-
-    @media only screen and (max-width: 56.25em) {
-      padding: 3rem 3rem 2rem;
-    }
-  }
-
-  &__img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    overflow: hidden;
-
-    @media only screen and (max-width: 56.25em) {
-      display: none;
-    }
-
-    &--1 {
-      grid-row: 1/2;
-
-      @media only screen and (max-width: 75em) {
-        grid-column: 1/2;
-        grid-row: 1/2;
-      }
-    }
-    &--2 {
-      grid-row: 2/-1;
-
-      @media only screen and (max-width: 75em) {
-        grid-column: 2/-1;
-        grid-row: 1/2;
-      }
-    }
   }
 
   &__text {
